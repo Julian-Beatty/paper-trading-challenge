@@ -1,6 +1,8 @@
 # Paper Trading Challenge
 
 A deterministic FastAPI backend for a long-only paper-trading competition. The game is initialized with a Competition class. The competition class is initialized with a liquidity policy (for simplicity, the initialization uses a fixed number of shares available per minute), and a stock universe. The stock universe is evolved over the competition according to simple geometric Brownian motion. The user can input the volatility and the drift (expected return) of each stock, creating a fully deterministic system. Participants can be after initialization, at any point during the competition with an initial cash amount. After initialization, participants can submit orders. When your done, you advance the clock forward, and ordered are processed according to the broker policy. Snapshots of the portfolio are taking at every minute, and you can see portfolio metrics such as return, value maximum drawdown. The overall leaderboard can be viewed, and ranked according available metrics. In the event of a tie, the maximum drawdown is used to break the tie. Plots of the participants portfolio, or competition are also available.
+
+![Paper Trading Competition Plots](plots.png)
 ## Features
 
 - Competition-specific stock universe with fully configurable symbols, starting prices, GBM drift/volatility, and per-minute liquidity (default universe still included)
